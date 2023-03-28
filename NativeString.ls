@@ -10,6 +10,11 @@
 
     #
 
+    trim-regex = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g
+    trim = -> trim-regex `it.replace` ''
+
+    #
+
     camel = -> ucase &1 ? ''
     camel-regex = /[-_]+(.)?/g
 
@@ -35,6 +40,7 @@
     {
       is-empty,
       to-case, lcase, ucase,
+      trim,
       camelize, dasherize,
       circumfix, affix
     }
