@@ -10,6 +10,12 @@
 
     not-empty = -> not empty it
 
+    #
+
+    trim = -> Str it ; NativeString.trim it
+
+    #
+
     char = utf16-as-char = -> String.from-char-code it
     char-as-utf16 = -> it.char-code-at 0
 
