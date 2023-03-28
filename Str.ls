@@ -77,7 +77,7 @@
     dasherize = -> Str it ; it |> ns.dasherize
 
     {
-      empty, not-empty,
+      empty, not-empty, trim,
       Str, MaybeStr,
       utf16-as-char, char-as-utf16,
       ascii-control-code, ascii-string-separator,
