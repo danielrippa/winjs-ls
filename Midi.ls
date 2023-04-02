@@ -6,8 +6,6 @@
     { new-instance } = dependency 'Instance'
     { Num } = dependency 'PrimitiveTypes'
 
-    { log } = dependency 'Console'
-
     { instruments } = dependency 'MidiInstruments'
 
     { add-channel, set-channel-instrument, play-percussion: midi-play-percussion, play-channel-note, release-channel-note } = winjs.load-library 'WinjsMidi.dll'
