@@ -163,8 +163,12 @@
     pad = new-enumeration pad-names, 88
     sound-effect = new-enumeration sound-effect-names, 120
 
-    {
+    instruments = {
       piano, percussion, organ, guitar,
       bass, strings, ensemble, brass,
       reed, pipe, synth, pad, sound-effect
+    }
+
+    {
+      instruments
     }
