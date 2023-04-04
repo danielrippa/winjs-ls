@@ -45,47 +45,47 @@
 
             subscription.notification-handler notification
 
-      #
+    #
 
-      camelized = -> [ (camelize item) for item in it ]
+    camelized = -> [ (camelize item) for item in it ]
 
-      #
+    #
 
-      new-notifier = (names) ->
+    new-notifier = (names) ->
 
-        List names
+      List names
 
-        do ->
+      do ->
 
-          subscription-names = camelized names
+        subscription-names = camelized names
 
-          subscriptions = arrays-as-object subscription-names, [ (new-notification-subscriptions!) for subscription in subscription-names ]
+        subscriptions = arrays-as-object subscription-names, [ (new-notification-subscriptions!) for subscription in subscription-names ]
 
-          #
+        #
 
-          get-notification-names: -> subscription-names
+        get-notification-names: -> subscription-names
 
-          bind: (subject) !->
+        bind: (subject) !->
 
-            # Fieldset subject
+          # Fieldset subject
 
-            for name of subscriptions
+          for name of subscriptions
 
-              notification-name = camelize name
+            notification-name = camelize name
 
-              subject[ notification-name ] = eval string-as-function do
+            subject[ notification-name ] = eval strings-as-function do
 
-                " handler "
-                [ " return subscriptions[ '#notification-name' ].subscribe(handler) " ]
+              " handler "
+              [ " return subscriptions[ '#notification-name' ].subscribe(handler) " ]
 
-          notify: (names, notification) !->
+        notify: (names, notification) !->
 
-            List names
+          List names
 
-            for notification-name in camelized names
+          for notification-name in camelized names
 
-              subscription = subscriptions[ notification-name ]
-              subscription.notify notification
+            subscription = subscriptions[ notification-name ]
+            subscription.notify notification
 
     ##
 
