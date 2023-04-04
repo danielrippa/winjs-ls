@@ -2,7 +2,7 @@
   do ->
 
     { screen-buffer } = winjs.load-library 'WinjsConsole.dll'
-    { get-stdout-handle, get-cursor-location, set-cursor-location, write, set-cursor-visibility } = screen-buffer
+    { get-stdout-handle, get-cursor-location, set-cursor-location, write, set-cursor-visibility, get-cursor-size, set-cursor-size } = screen-buffer
     { new-instance } = dependency 'Instance'
     { Num } = dependency 'PrimitiveTypes'
 
@@ -12,6 +12,10 @@
 
       hide-cursor: member: -> set-cursor-visibility @handle, off
       show-cursor: member: -> set-cursor-visibility @handle, on
+
+      cursor-size:
+        getter: -> get-cursor-size @handle
+        setter: -> Num it ; set-cursor-size @handle, it
 
       goto: member: (row, column) -> set-cursor-location @handle, row, column
 
