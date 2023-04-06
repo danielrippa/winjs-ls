@@ -4,7 +4,7 @@
     { native-type: n, native-type-name: type-name } = dependency 'NativeTypes'
     { array-as-object } = dependency 'NativeArray'
 
-    p = primitive-type = array-as-object <[ Str Null FieldSet Num NaN List Bool Fn Void Tuple Exception ]>
+    p = primitive-type = array-as-object <[ Str Null Fieldset Num NaN List Bool Fn Void Tuple Exception ]>
 
     primitive-type-name = (value) ->
 
