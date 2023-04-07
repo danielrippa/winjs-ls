@@ -19,7 +19,7 @@
 
       result <<< instance.exports
 
-      result <<< memory-array: new Uint8Array instance.exports.memory.buffer
+      result <<< byte-array: new Uint8Array instance.exports.memory.buffer
 
     {
       new-wasm-instance,
